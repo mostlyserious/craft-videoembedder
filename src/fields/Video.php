@@ -63,7 +63,7 @@ class Video extends Field implements PreviewableFieldInterface
      * @throws \Twig_Error_Loader
      * @throws \RuntimeException
      */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         return Craft::$app->getView()->renderTemplate(
             'video-embedder/VideoField/settings',
@@ -92,7 +92,7 @@ class Video extends Field implements PreviewableFieldInterface
      * @param ElementInterface|null $element
      * @return mixed|EmbedModel
      */
-    public function normalizeValue($value, ElementInterface $element = null)
+    public function normalizeValue(mixed $value, ?ElementInterface $element = null): mixed
     {
         return $value;
     }
@@ -102,7 +102,7 @@ class Video extends Field implements PreviewableFieldInterface
      * @param ElementInterface|null $element
      * @return array|mixed|null|string
      */
-    public function serializeValue($value, ElementInterface $element = null)
+    public function serializeValue(mixed $value, ?ElementInterface $element = null): mixed
     {
         return $value;
     }
