@@ -49,10 +49,7 @@ class VideoEmbedder extends Plugin
     // Public Properties
     // =========================================================================
 
-    /**
-     * @var string
-     */
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
     // Public Methods
     // =========================================================================
@@ -69,7 +66,7 @@ class VideoEmbedder extends Plugin
         $this->setComponents([
             'service' => VideoEmbedderService::class,
 		]);
-		
+
 		Event::on(
             Fields::className(),
             Fields::EVENT_REGISTER_FIELD_TYPES,
