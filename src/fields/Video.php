@@ -120,8 +120,8 @@ class Video extends Field implements PreviewableFieldInterface
      * @throws \yii\base\InvalidConfigException
      */
     public function getInputHtml(
-        $value,
-        ElementInterface $element = null
+        mixed $value,
+        ?\craft\base\ElementInterface $element = null
     ): string {
 
         // Register our asset bundle
@@ -177,7 +177,7 @@ class Video extends Field implements PreviewableFieldInterface
      * @param ElementInterface $element
      * @return string
      */
-    public function getSearchKeywords($value, ElementInterface $element): string
+    public function getSearchKeywords(mixed $value, ElementInterface $element): string
     {
         return json_encode($this);
     }
@@ -190,8 +190,8 @@ class Video extends Field implements PreviewableFieldInterface
      * @throws \yii\base\Exception
      * @throws \yii\base\InvalidConfigException
      */
-    public function getTableAttributeHtml(
-        $value,
+    public function getPreviewHtml(
+        mixed $value,
         ElementInterface $element
     ): string {
 
@@ -216,7 +216,7 @@ class Video extends Field implements PreviewableFieldInterface
      * @return bool Whether the value should be considered “empty”
      * @see Validator::$isEmpty
      */
-    public function isValueEmpty($value, ElementInterface $element = null): bool
+    public function isValueEmpty(mixed $value, ElementInterface $element = null): bool
     {
         return parent::isValueEmpty($value, $element);
     }
